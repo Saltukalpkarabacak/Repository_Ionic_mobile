@@ -1,0 +1,65 @@
+<ion-view view-title="SiskoApp">
+  <ion-content>
+
+
+
+<!--Bilgi kartı-->
+<div class="card">
+  <div class="item item-text-wrap">
+  Merhaba {{isim}} Lütfen sizden istenilen boy ve kilo bilgisiniz aşağıdaki alanlara giriniz...
+  </div>
+</div>
+
+
+
+
+
+
+<div class="list">
+
+
+
+  <div class=" range range-positive">
+    Boy
+    <input type="range" ng-model="boy" min="30" max="300" ng-change="hesapla(boy,kilo)">
+    {{boy}}cm
+  </div>
+
+
+
+  <div class=" range range-positive">
+    Kilo
+    <input type="range" ng-model="kilo" min="30" max="300"  ng-change="hesapla(boy,kilo)">
+    {{kilo}}kg
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+<!--Bilgi kartı-->
+<div class="card">
+  <div class="item item-text-wrap">
+{{sonuc}}   {{boy*kilo>0 ? sonuc<18 ? 'Zafıf':sonuc<24 ? 'Normal':sonuc<30 ? 'sisko':'obez':' '}}
+
+
+<img src="img/{{boy*kilo>0 ? (kilo/((boy/100)*(boy/100)))<18 ? 'Zafıf':(kilo/((boy/100)*(boy/100)))<24 ? 'Normal':(kilo/((boy/100)*(boy/100)))<30 ? 'sisko':'obez':''}}.png">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  </ion-content>
+</ion-view>
